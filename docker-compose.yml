@@ -21,3 +21,8 @@ services:
       MYSQL_DATABASE: your_database
     ports:
       - "3307:3306"
+    volumes:
+      - sequenceTest:/var/lib/mysql
+
+volumes:
+  sequenceTest:
