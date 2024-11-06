@@ -2,6 +2,7 @@ package org.spring.sequenceTest.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.spring.sequenceTest.dto.MemberDTO;
 
 import java.util.Date;
 
@@ -26,4 +27,15 @@ public class CareerEntity {
 
     @Column
     private String careerDescription;
+
+    public static CareerEntity toCareerEntity(MemberDTO memberDTO){
+        CareerEntity careerEntity = new CareerEntity();
+
+        careerEntity.setCareerName(memberDTO.getCareer_name());
+        careerEntity.setCareerDuration(memberDTO.getCareer_duration());
+        careerEntity.setCareerDescription(memberDTO.getCareer_description());
+
+        return careerEntity;
+    }
 }
+

@@ -2,6 +2,7 @@ package org.spring.sequenceTest.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.spring.sequenceTest.dto.MemberDTO;
 
 import java.util.Date;
 
@@ -55,5 +56,17 @@ public class EducationEntity {
         UI_UX_DESIGN, FRONT_END, BACK_END, PM;
     }
 
+    public static EducationEntity toEducationEntity(MemberDTO memberDTO){
+        EducationEntity educationEntity = new EducationEntity();
+
+        educationEntity.setSchoolName(memberDTO.getSchool_name());
+        educationEntity.setMajor(memberDTO.getMajor());
+        educationEntity.setEntranceDate(memberDTO.getEntrance_date());
+        educationEntity.setGraduationDate(memberDTO.getGraduation_date());
+        educationEntity.setDegree(memberDTO.getDegree());
+        educationEntity.setSkillCategory(memberDTO.getSkill_category());
+        educationEntity.setDesiredJob(memberDTO.getDesired_job());
+        return educationEntity;
+    }
 
 }

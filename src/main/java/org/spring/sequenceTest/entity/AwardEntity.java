@@ -2,6 +2,7 @@ package org.spring.sequenceTest.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.spring.sequenceTest.dto.MemberDTO;
 
 import java.util.Date;
 
@@ -26,5 +27,15 @@ public class AwardEntity {
 
     @Column
     private String awardDescription;
+
+    public static AwardEntity toAwardEntity(MemberDTO memberDTO){
+        AwardEntity awardEntity = new AwardEntity();
+
+        awardEntity.setAwardName(memberDTO.getAward_name());
+        awardEntity.setAwardDuration(memberDTO.getAward_duration());
+        awardEntity.setAwardDescription(memberDTO.getAward_description());
+
+        return awardEntity;
+    }
 
 }
