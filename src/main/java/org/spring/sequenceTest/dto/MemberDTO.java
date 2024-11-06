@@ -25,7 +25,7 @@ public class MemberDTO {
     private String phone;
     private String email;
     private String introduction;
-    private String webUrl;
+    private String web_url;
     private String school_name;
     private String major;
     private Date entrance_date;

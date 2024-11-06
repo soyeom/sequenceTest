@@ -47,7 +47,7 @@ public class MemberEntity {
     @Column(name="introduction", nullable = false)
     private String introduction;
 
-    @Column(name="web_url", nullable = false, length = 150)
+    @Column(name="web_url", length = 150)
     private String webUrl;
 
     // AwardEntity와의 일대다 관계 설정
@@ -79,6 +79,8 @@ public class MemberEntity {
         memberEntity.setAddress(memberDTO.getAddress());
         memberEntity.setPhone(memberDTO.getPhone());
         memberEntity.setEmail(memberDTO.getEmail());
+        memberEntity.setIntroduction(memberDTO.getIntroduction());
+        memberEntity.setWebUrl(memberDTO.getWeb_url());
         return memberEntity;
     }
 

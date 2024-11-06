@@ -16,7 +16,7 @@ public class MemberController {
     @Autowired
     private final MemberService memberService;
 
-    @PostMapping("/api/member/login")
+    @PostMapping("/api/member/join")
     public String login(@RequestBody MemberDTO memberDTO){
         memberService.save(memberDTO);
         return "index";
